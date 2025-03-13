@@ -7,32 +7,42 @@ import { AppBar, Box, Toolbar, IconButton, Badge, Typography } from '@mui/materi
  * It includes the CourseEase logo, Mail, and Notifications icons.
  */
 
-const CustomAppBar = () => {
+const CustomAppBar = ({ data }) => {
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Toolbar>
                 <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                    CourseEase
+                    {data.title}
                 </Typography>
                 <Box sx={{ flexGrow: 1 }} />
 
                 {/* Mail, used as a bridge between Trainer and Trainee  */}
-                <IconButton size="large" color="inherit">
-                    <Badge color="error">
+                {data.mail && <IconButton size="large" color="inherit">
+                    <Badge badgeContent={data.mailCount} color="error">
                         <MailIcon />
                     </Badge>
-                </IconButton>
+                </IconButton>}
 
                 {/* Notifications, notifies if there is any required action needed from one of the stackholder */}
-                <IconButton size="large" color="inherit">
-                    <Badge color="error">
+                {data.notifications && <IconButton size="large" color="inherit">
+                    <Badge badgeContent= {data.notificationCount} color="error">
                         <NotificationsIcon />
                     </Badge>
-                </IconButton>
+                </IconButton>}
             </Toolbar>
         </AppBar>
 
     );
+}
+
+CustomAppBar.defaultProps = {
+    data: {
+        title: 'CourseEase',
+        mail: true,
+        notifications: true,
+        mailCount: 0,
+        notificationCount: 0
+    }
 }
 
 export default CustomAppBar;

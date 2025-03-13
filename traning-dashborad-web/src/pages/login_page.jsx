@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Box, Typography, Container, TextField, Button } from '@mui/material';
+import { Box, Container, TextField, Button, Typography } from '@mui/material';
 import CustomAppBar from '../components/app-bar';
 import Footer from '../components/footer';
+// import CustomTextField from '../components/text-field';
 
 /**
  * Login Page contains the sign-in form.
@@ -13,7 +14,13 @@ import Footer from '../components/footer';
 const CustomLoginPage = () => {
     return (
         <>
-            <CustomAppBar />
+            <CustomAppBar data={{
+                title: 'CourseEase',
+                mail: false,
+                notifications: false,
+                mailCount: 0,
+                notificationCount: 0
+            }} />
 
             {/* Main Container, which will contain page content */}
             <Container

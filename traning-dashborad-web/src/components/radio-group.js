@@ -4,7 +4,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 
-export default function ControlledRadioButtonsGroup() {
+export default function CusotmRadioButton() {
     const [value, setValue] = React.useState('trainee');
 
     const handleChange = (event) => {

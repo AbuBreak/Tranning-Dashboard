@@ -1,12 +1,19 @@
 import CustomAppBar from "../components/app-bar";
 import { Box, Typography, Container, TextField, Button } from '@mui/material';
-import ControlledRadioButtonsGroup from "../components/radio-group";
+import CusotmRadioButton from "../components/radio-group";
 import Footer from "../components/footer";
+import SelectField from "../components/select-field";
 
 const CustomSignUpPage = () => {
     return (
         <>
-            <CustomAppBar />
+            <CustomAppBar data={{
+                title: 'CourseEase',
+                mail: false,
+                notifications: false,
+                mailCount: 0,
+                notificationCount: 0
+            }} />
 
             <Container
                 maxWidth="xs"
@@ -35,7 +42,7 @@ const CustomSignUpPage = () => {
                         Sign Up
                     </Typography>
 
-                    <ControlledRadioButtonsGroup />
+                    <CusotmRadioButton />
                     <TextField
                         fullWidth
                         label="first name"
@@ -57,12 +64,7 @@ const CustomSignUpPage = () => {
                         margin="normal"
                     />
 
-                    <TextField
-                        fullWidth
-                        label="job title"
-                        variant="outlined"
-                        margin="normal"
-                    />
+                    <SelectField />
 
                     <TextField
                         fullWidth
