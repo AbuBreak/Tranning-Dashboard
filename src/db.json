@@ -1,0 +1,14 @@
+{
+    "mails": {
+      "count": 0,
+      "enabled": true
+    },
+    "notifications": {
+      "count": 7,
+      "enabled": true
+    },
+    "users": [
+      { "id": 1, "name": "John Doe" },
+      { "id": 2, "name": "Jane Smith" }
+    ]
+  }
