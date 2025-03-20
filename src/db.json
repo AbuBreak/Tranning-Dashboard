@@ -1,14 +1,46 @@
 {
-    "mails": {
-      "count": 0,
-      "enabled": true
+  "mails": {
+    "count": 0,
+    "enabled": true
+  },
+  "notifications": {
+    "count": 7,
+    "enabled": true
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe"
     },
-    "notifications": {
-      "count": 7,
-      "enabled": true
+    {
+      "id": 2,
+      "name": "Jane Smith"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "se",
+      "name": "Software Engineer"
     },
-    "users": [
-      { "id": 1, "name": "John Doe" },
-      { "id": 2, "name": "Jane Smith" }
-    ]
-  }
+    {
+      "id": "fullStack",
+      "name": "Full-Stack Developer"
+    },
+    {
+      "id": "mb",
+      "name": "Mobile App Developer"
+    },
+    {
+      "id": "ne",
+      "name": "Network Engineer"
+    },
+    {
+      "id": "backend",
+      "name": "Backend Developer"
+    },
+    {
+      "id": "SVI",
+      "name": "cheif Executive"
+    }
+  ]
+}

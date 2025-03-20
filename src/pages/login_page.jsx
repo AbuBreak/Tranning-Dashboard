@@ -1,11 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Box, Container, Button, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import CustomTextField from "../components/shared-components/TDTextFields/text-field";
 import CustomAppBar from "../components/shared-components/TDAppBars/app-bar";
 import Footer from "../components/shared-components/TDAppBars/footer";
 import { loginValidationSchema } from "../utils/validations/validation";
+import CustomButton from "../components/shared-components/TDButtons/custom-button";
+import CustomTypography from "../components/shared-components/TDTypographies/custom-typography";
 
 const CustomLoginPage = () => {
     const {
@@ -22,7 +24,12 @@ const CustomLoginPage = () => {
 
     return (
         <>
-            <CustomAppBar title="CourseEase" mail="false" notifications="false" mailCount="0" notificationCount="0" />
+            <CustomAppBar
+                title="CourseEase"
+                mail="false"
+                notifications="false"
+                mailCount="0"
+                notificationCount="0" />
 
             <Container
                 maxWidth="xs"
@@ -34,9 +41,15 @@ const CustomLoginPage = () => {
                     justifyContent: "center",
                 }}
             >
-                <Typography variant="h5" textAlign="center" sx={{ mb: 3 }}>
+                <CustomTypography
+                    fontFamily="sans-serif"
+                    fontSize='1rem'
+                    color='text.primary'
+                    variant="h5"
+                    textAlign="center"
+                    sx={{ mb: 3 }}>
                     Welcome to CourseEase – The Ultimate Course Management Platform!
-                </Typography>
+                </CustomTypography>
 
                 <Box
                     sx={{
@@ -48,9 +61,15 @@ const CustomLoginPage = () => {
                         textAlign: "center",
                     }}
                 >
-                    <Typography variant="h4" gutterBottom>
+                    <CustomTypography
+                        fontFamily="sans-serif"
+                        fontSize='2rem'
+                        color='text.primary'
+                        variant="h5"
+                        textAlign="center"
+                        sx={{ mb: 3 }}>
                         Sign In
-                    </Typography>
+                    </CustomTypography>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <CustomTextField
@@ -73,22 +92,41 @@ const CustomLoginPage = () => {
                             margin="normal"
                         />
 
-                        <Typography variant="body2" sx={{ mt: 2 }}>
+                        <CustomTypography
+                            fontFamily="sans-serif"
+                            fontSize='1rem'
+                            color='text.primary'
+                            variant="h5"
+                            textAlign="center"
+                            sx={{ mt: 2 }}>
                             Don't have an account? <a href="/signup">Sign Up</a>
-                        </Typography>
-                        
-                        <Button fullWidth variant="contained" color="primary" sx={{ mt: 2 }} type="submit">
+                        </CustomTypography>
+
+                        <CustomButton
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            sx={{ mt: 2 }}
+                            type="submit"
+                            onClick={() => { alert('Sign in button clicked') }}>
                             Sign In
-                        </Button>
+                        </CustomButton>
                     </form>
 
                     <hr />
 
-                    <Button fullWidth variant="contained" color="secondary" sx={{ mt: 2 }}>
+                    <CustomButton
+                        color="secondary"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 2 }}
+                        type="submit"
+                        onClick={() => alert('Sign In with Google button clicked!')}
+                    >
                         Sign In with Google
-                    </Button>
+                    </CustomButton>
                 </Box>
-            </Container>
+            </Container >
 
             <Footer />
         </>

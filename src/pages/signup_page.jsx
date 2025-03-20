@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Box, Typography, Container, Button } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import CusotmRadioButton from "../components/radio-group";
 import CustomSelectField from "../components/select-field";
 import CustomAppBar from '../components/shared-components/TDAppBars/app-bar';
 import Footer from '../components/shared-components/TDAppBars/footer';
 import CustomTextField from '../components/shared-components/TDTextFields/text-field';
 import { signupValidationSchema } from "../utils/validations/validation";
+import CustomTypography from "../components/shared-components/TDTypographies/custom-typography";
+import CustomButton from "../components/shared-components/TDButtons/custom-button";
 
 
 const CustomSignUpPage = () => {
@@ -45,9 +47,15 @@ const CustomSignUpPage = () => {
                     justifyContent: 'center'
                 }}
             >
-                <Typography variant="h5" textAlign="center" sx={{ mb: 3 }}>
+                <CustomTypography
+                    fontFamily="sans-serif"
+                    fontSize='1rem'
+                    color='text.primary'
+                    variant="h4"
+                    textAlign="center"
+                    sx={{ mb: 3 }}>
                     Can't wait to get started? Sign up now!
-                </Typography>
+                </CustomTypography>
                 <Box
                     sx={{
                         p: 3,
@@ -58,9 +66,15 @@ const CustomSignUpPage = () => {
                         textAlign: 'center',
                     }}
                 >
-                    <Typography variant="h4" gutterBottom>
+                    <CustomTypography
+                        fontFamily="sans-serif"
+                        fontSize='1rem'
+                        color='text.primary'
+                        variant="h4"
+                        textAlign="center"
+                        sx={{ mb: 3 }}>
                         Sign Up
-                    </Typography>
+                    </CustomTypography>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -119,7 +133,9 @@ const CustomSignUpPage = () => {
 
                         <CustomSelectField
                             value={watch("job") || ""}
-                            onChange={(e) => setValue("job", e.target.value)}
+                            onChange={(e) => {setValue("job", e.target.value);
+                                alert(`job selected:${e.target.value} `)
+                            }}
                             error={errors.job?.message}
                         />
 
@@ -147,32 +163,40 @@ const CustomSignUpPage = () => {
                             helperText={errors.confirmPassword?.message}
 
                         />
-                        <Button
+                        <CustomButton
                             fullWidth
                             variant="contained"
                             color="primary"
                             sx={{ mt: 2 }}
                             type="submit"
+                            onClick={() => { alert('Register button clicked') }}
                         >
                             Register
-                        </Button>
+                        </CustomButton>
                     </form>
 
-                    <Typography variant="body2" sx={{ mt: 2 }}>
-                        Already have an account? <a href="/">Sign In</a>
-                    </Typography>
-
+                    <CustomTypography
+                        fontFamily="sans-serif"
+                        fontSize='0.9rem'
+                        color='text.secondary'
+                        variant="body2"
+                        textAlign="center"
+                        sx={{ mt: 2 }}>
+                        Already have an account? <a href="/" style={{ textDecoration: 'none', color: '#1976d2' }}>Sign In</a>
+                    </CustomTypography>
 
                     <hr />
 
-                    <Button
+                    <CustomButton
                         fullWidth
                         variant="contained"
                         color="secondary"
                         sx={{ mt: 2 }}
+                        type="submit"
+                        onClick={() => { alert('Sign Up with Google button clicked') }}
                     >
                         Sign Up with Google
-                    </Button>
+                    </CustomButton>
 
                 </Box>
             </Container>
