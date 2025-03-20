@@ -8,7 +8,8 @@ import CustomLoginPage from "./pages/login_page";
  * @return {JSX.Element} The JSX representation of the App component.
  */
 
-{/* TODO add logo, simple image and add animation for them with the description below. */ }
+// eslint-disable-next-line no-lone-blocks
+{/* TODO add logo, simple image and animation for them with the description below. */ }
 
 function App() {
 
